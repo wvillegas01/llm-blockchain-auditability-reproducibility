@@ -11,6 +11,8 @@ ZIP_PATH = ROOT.parent / f"{ROOT.name}_v1.zip"
 def include(path: Path) -> bool:
     if not path.is_file():
         return False
+    if ".git" in path.parts:
+        return False
     if "__pycache__" in path.parts:
         return False
     if path.suffix == ".pyc":

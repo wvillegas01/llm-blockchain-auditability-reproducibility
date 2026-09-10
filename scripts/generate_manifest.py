@@ -28,7 +28,7 @@ def main() -> None:
             continue
         if path.name in EXCLUDED_NAMES:
             continue
-        if "__pycache__" in path.parts or path.suffix == ".pyc":
+        if ".git" in path.parts or "__pycache__" in path.parts or path.suffix == ".pyc":
             continue
         rel = path.relative_to(ROOT).as_posix()
         rows.append(
