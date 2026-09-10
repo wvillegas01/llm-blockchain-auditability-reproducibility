@@ -1,0 +1,9 @@
+attack_type,detected,error_count,unique_error_types,detection_time_ms,blocks_checked,membership_records_checked,false_acceptance
+merkle_root_tampering,True,2,block_hash;merkle_root,629.948,140,139258,False
+block_hash_tampering,True,2,block_hash;previous_hash_link,622.374,140,139258,False
+previous_hash_tampering,True,2,block_hash;previous_hash_link,599.93,140,139258,False
+block_reordering,True,5,block_id_sequence;previous_hash_link,627.075,140,139258,False
+decision_hash_membership_tampering,True,2,decision_hash_match;merkle_root,617.779,140,139258,False
+record_deletion,True,2,merkle_root;record_count,588.288,140,139257,False
+record_reassignment,True,5,first_record_id;merkle_root;record_count,630.408,140,139258,False
+dataset_label_membership_tampering,True,1,dataset_match,620.598,140,139258,False

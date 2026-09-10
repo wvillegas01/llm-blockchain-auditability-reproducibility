@@ -1,0 +1,6 @@
+Interaction load,Total audit records,Ledger blocks,Relative latency,Relative ledger throughput,Verification efficiency,Scalability factor
+10000,49258,50,1.0,1.0,1.0713,1.0
+50000,89258,90,1.6448,1.5295,0.7006,1.8121
+100000,139258,140,2.4453,1.8775,0.5991,2.8271
+250000,289258,290,4.899,2.4559,0.4661,5.8723
+500000,539258,540,8.9185,2.9343,0.3983,10.9476

@@ -1,0 +1,228 @@
+{
+  "package": "github_zenodo_reproducibility_package_20260910",
+  "manuscript": "Large-Scale Conversational Data Auditability via Cryptographic Commitments and Blockchain Verification",
+  "all_checks_passed": true,
+  "verification_scope": {
+    "immediate": "Validates reported numerical metrics from included derived tables, storage audit summaries, and traceability outputs.",
+    "full_pipeline": "Framework scripts are included, but full regeneration requires retrieving the public third-party datasets under their source licenses and preparing the documented local data paths.",
+    "not_redistributed": "Original third-party conversational records and HMAC secret keys are not included."
+  },
+  "table6_linear_fit": {
+    "slope_seconds_per_record": 8.392451688594886e-05,
+    "intercept_seconds": 1.0514580428728202,
+    "r_squared": 0.9999891480284726,
+    "seconds_per_100k_records": 8.392451688594885
+  },
+  "checks": [
+    {
+      "check": "fixed pilot total audit records",
+      "actual": 139258,
+      "expected": 139258,
+      "tolerance": null,
+      "passed": true
+    },
+    {
+      "check": "fixed pilot interaction records",
+      "actual": 100000,
+      "expected": 100000,
+      "tolerance": null,
+      "passed": true
+    },
+    {
+      "check": "fixed pilot comparison records",
+      "actual": 39258,
+      "expected": 39258,
+      "tolerance": null,
+      "passed": true
+    },
+    {
+      "check": "HMAC full record-set verification passed",
+      "actual": true,
+      "expected": true,
+      "tolerance": null,
+      "passed": true
+    },
+    {
+      "check": "SHA-256 full record-set verification passed",
+      "actual": true,
+      "expected": true,
+      "tolerance": null,
+      "passed": true
+    },
+    {
+      "check": "HMAC false acceptance count",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": null,
+      "passed": true
+    },
+    {
+      "check": "SHA-256 false acceptance count",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": null,
+      "passed": true
+    },
+    {
+      "check": "HMAC tampering detection rate",
+      "actual": 1.0,
+      "expected": 1.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "check": "SHA-256 tampering detection rate",
+      "actual": 1.0,
+      "expected": 1.0,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "check": "HMAC audit-generation relative change percent",
+      "actual": -5.3731,
+      "expected": -5.3731,
+      "tolerance": 0.0002,
+      "passed": true
+    },
+    {
+      "check": "HMAC full record-set verification relative change percent",
+      "actual": 3.2635,
+      "expected": 3.2635,
+      "tolerance": 0.0002,
+      "passed": true
+    },
+    {
+      "check": "controlled tampering scenarios",
+      "actual": 8,
+      "expected": 8,
+      "tolerance": null,
+      "passed": true
+    },
+    {
+      "check": "controlled tampering scenarios detected",
+      "actual": 8,
+      "expected": 8,
+      "tolerance": null,
+      "passed": true
+    },
+    {
+      "check": "controlled tampering false acceptances",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": null,
+      "passed": true
+    },
+    {
+      "check": "Table 6 load scenario count",
+      "actual": 5,
+      "expected": 5,
+      "tolerance": null,
+      "passed": true
+    },
+    {
+      "check": "Table 6 first scenario audit records",
+      "actual": 49258,
+      "expected": 49258,
+      "tolerance": null,
+      "passed": true
+    },
+    {
+      "check": "Table 6 last scenario audit records",
+      "actual": 539258,
+      "expected": 539258,
+      "tolerance": null,
+      "passed": true
+    },
+    {
+      "check": "Table 6 linear fit R squared",
+      "actual": 0.999989,
+      "expected": 0.999989,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "Table 6 seconds per 100k records",
+      "actual": 8.392,
+      "expected": 8.392,
+      "tolerance": 0.002,
+      "passed": true
+    },
+    {
+      "check": "Table 6 final relative latency",
+      "actual": 8.9185,
+      "expected": 8.9185,
+      "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "check": "Table 7 block-size scenario count",
+      "actual": 6,
+      "expected": 6,
+      "tolerance": null,
+      "passed": true
+    },
+    {
+      "check": "Table 7 fixed audit records covered at block size 1000",
+      "actual": true,
+      "expected": true,
+      "tolerance": null,
+      "passed": true
+    },
+    {
+      "check": "Table 7 minimum block-header chain-validation time",
+      "actual": 2.6e-05,
+      "expected": 2.6e-05,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "check": "Table 7 maximum block-header chain-validation time",
+      "actual": 0.000921,
+      "expected": 0.000921,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "check": "full-corpus auditable units",
+      "actual": 3971887,
+      "expected": 3971887,
+      "tolerance": null,
+      "passed": true
+    },
+    {
+      "check": "full-corpus off-chain size MiB",
+      "actual": 11899.55153,
+      "expected": 11899.55153,
+      "tolerance": 1e-05,
+      "passed": true
+    },
+    {
+      "check": "full-corpus audit-record size MiB",
+      "actual": 1473.437063,
+      "expected": 1473.437063,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "full-corpus ledger headers-only size MiB",
+      "actual": 2.025453,
+      "expected": 2.025453,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "full-corpus ledger plus membership size MiB",
+      "actual": 380.515149,
+      "expected": 380.515149,
+      "tolerance": 1e-06,
+      "passed": true
+    },
+    {
+      "check": "full-corpus verification passed",
+      "actual": true,
+      "expected": true,
+      "tolerance": null,
+      "passed": true
+    }
+  ]
+}

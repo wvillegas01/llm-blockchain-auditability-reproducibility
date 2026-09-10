@@ -1,0 +1,6 @@
+Dataset,Source records,Auditable units,Yield ratio,Filtered records,Filtering ratio (%),Dataset contribution (%)
+lmsys-chat-1m,1000000,1989603,1.9896,26042,2.6042,50.0921
+WildChat,837989,1943026,2.3187,17048,2.0344,48.9195
+Chatbot_arena,33000,39258,1.1896,58,0.1758,0.9884
+Interaction records total,1837989,3932629,2.1396,43090,2.3444,99.0116
+All canonical auditable units,1870989,3971887,2.1229,43148,2.3062,100.0

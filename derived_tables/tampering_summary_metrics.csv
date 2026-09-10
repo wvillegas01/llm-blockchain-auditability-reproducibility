@@ -1,0 +1,6 @@
+metric,value
+tampering_attack_count,8
+tampering_detected_count,8
+tampering_detection_rate,1.0
+false_acceptance_count,0
+mean_detection_time_ms,617.05

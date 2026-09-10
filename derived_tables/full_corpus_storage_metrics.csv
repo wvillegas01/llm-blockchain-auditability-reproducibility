@@ -1,0 +1,7 @@
+category,artifact,path,rows,size_bytes,size_mib
+offchain,normalized_interactions,processed/offchain/normalized_interactions.parquet,3932629,12434407914,11858.375467
+offchain,normalized_comparisons,processed/offchain/normalized_comparisons.parquet,39258,43176231,41.176063
+audit_records,audit_records_full_hmac,processed/audit_records/audit_records_full_hmac.parquet,3932629,1525558227,1454.885699
+audit_records,comparison_audit_records_full_hmac,processed/audit_records/comparison_audit_records_full_hmac.parquet,39258,19452515,18.551364
+ledger,ledger_blocks_full,processed/ledger/ledger_blocks_full.jsonl,,2123841,2.025453
+ledger,ledger_record_membership_full,processed/ledger/ledger_record_membership_full.parquet,3971887,396875212,378.489697

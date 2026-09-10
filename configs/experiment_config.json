@@ -1,0 +1,40 @@
+{
+  "manuscript_title": "Large-Scale Conversational Data Auditability via Cryptographic Commitments and Blockchain Verification",
+  "package_date": "2026-09-10",
+  "source_datasets": {
+    "lmsys_chat_1m": "https://huggingface.co/datasets/lmsys/lmsys-chat-1m",
+    "wildchat": "https://huggingface.co/datasets/allenai/WildChat",
+    "chatbot_arena_conversations": "https://huggingface.co/datasets/lmsys/chatbot_arena_conversations"
+  },
+  "primary_experimental_environment": {
+    "processor_family": "Intel Core i9",
+    "memory_gb": 64,
+    "operating_system": "Ubuntu 24.04 LTS",
+    "python": "3.12"
+  },
+  "local_consistency_audit_environment": {
+    "operating_system": "Windows 11",
+    "python": "3.12.3",
+    "processor": "13th Gen Intel(R) Core(TM) i9-13900HX",
+    "physical_cores": 24,
+    "logical_cores": 32,
+    "memory_gb_approx": 31.75
+  },
+  "pilot_fixed_record_set": {
+    "interaction_records": 100000,
+    "comparison_records": 39258,
+    "total_audit_records": 139258,
+    "default_block_size": 1000
+  },
+  "load_scalability_initial_interactions": [10000, 50000, 100000, 250000, 500000],
+  "block_size_sensitivity_records_per_block": [100, 250, 500, 1000, 2000, 5000],
+  "hash_modes": ["sha256", "hmac-sha256"],
+  "tampering_categories": [
+    "Merkle and decision-hash integrity",
+    "Hash-chain linkage integrity",
+    "Block ordering integrity",
+    "Membership completeness",
+    "Dataset-membership consistency"
+  ],
+  "data_redistribution_policy": "Third-party conversational datasets are not redistributed. Public source links and processing scripts are provided."
+}
