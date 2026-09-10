@@ -6,6 +6,7 @@ authors:
     given-names: "William"
 date-released: "2026-09-10"
 version: "1.0.0"
+repository-code: "https://github.com/wvillegas01/llm-blockchain-auditability-reproducibility"
 keywords:
   - LLM auditability
   - cryptographic commitments
