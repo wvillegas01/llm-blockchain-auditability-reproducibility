@@ -1,5 +1,5 @@
 {
-  "manuscript_title": "Large-Scale Conversational Data Auditability via Cryptographic Commitments and Blockchain Verification",
+  "manuscript_title": "Large-Scale Conversational Data Auditability via Cryptographic Commitments and Hash-Chained Audit-Ledger Verification",
   "package_date": "2026-09-10",
   "source_datasets": {
     "lmsys_chat_1m": "https://huggingface.co/datasets/lmsys/lmsys-chat-1m",
@@ -36,5 +36,5 @@
     "Membership completeness",
     "Dataset-membership consistency"
   ],
-  "data_redistribution_policy": "Third-party conversational datasets are not redistributed. Public source links and processing scripts are provided."
+  "data_redistribution_policy": "Third-party conversational datasets are not redistributed. Public source links, downstream processing scripts, derived tables, and numerical consistency checks are provided. The Stage 08 canonical dataset-normalization implementation is not included because it forms part of the potentially commercializable software architecture."
 }

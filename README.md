@@ -1,28 +1,28 @@
 # Reproducibility Package
 
-Manuscript: **Large-Scale Conversational Data Auditability via Cryptographic Commitments and Blockchain Verification**
+Manuscript: **Large-Scale Conversational Data Auditability via Cryptographic Commitments and Hash-Chained Audit-Ledger Verification**
 
 Package date: 2026-09-10
 
-This repository provides the reproducibility materials for the numerical results reported in the manuscript. It is designed for public release through GitHub and archival release through Zenodo.
+This repository provides public numerical-audit materials for the results reported in the manuscript. It is designed for public release through GitHub and archival release through Zenodo.
 
 ## Reproducibility Scope
 
-The package supports two levels of reproducibility:
+The package supports two levels of public verification:
 
-1. **Immediate numerical verification.** The included verification script checks the reported tables and storage metrics against non-raw derived artifacts included in this repository.
-2. **Full workflow traceability.** The included framework scripts document the processing pipeline used to transform public conversational datasets into canonical audit records, hash-only records, lightweight ledger headers, membership mappings, tampering scenarios, and aggregate metrics.
+1. **Immediate numerical consistency verification.** The included verification script checks the reported tables and storage metrics against non-raw derived artifacts included in this repository.
+2. **Downstream audit-stage traceability.** The included framework scripts document the stages that transform already normalized canonical files into hash-only audit records, lightweight ledger headers, membership mappings, tampering scenarios, and aggregate metrics.
 
-The package does not redistribute original third-party conversational records. Users who wish to rerun the complete data-processing workflow must retrieve the public datasets from their original providers and comply with the corresponding source licenses and access conditions.
+The package does not redistribute original third-party conversational records, HMAC secret keys, or the implementation of the canonical dataset-normalization stage. Users who wish to rerun the complete data-processing workflow must retrieve the public datasets from their original providers, comply with the corresponding source licenses and access conditions, and prepare canonical intermediate files matching the documented schema. The public script `scripts/verify_reported_results.py` should therefore be interpreted as a consistency-checking utility for the released numerical artifacts, not as an end-to-end reproduction of the complete processing pipeline.
 
 ## Repository Contents
 
 - `configs/`: experimental configuration and environment metadata.
 - `data_access/`: public dataset links and redistribution notes.
 - `derived_tables/`: non-raw tables and aggregate outputs used to verify manuscript results.
-- `framework_scripts/`: traceability scripts for the canonicalization, audit-record generation, ledger construction, verification, tampering, and performance stages.
+- `framework_scripts/`: traceability scripts for audit-record generation, ledger construction, verification, tampering, and performance stages downstream of canonical normalization.
 - `reports/`: audit reports supporting the storage-footprint and traceability claims.
-- `scripts/verify_reported_results.py`: automated verification of the numerical claims reported in the manuscript.
+- `scripts/verify_reported_results.py`: automated numerical consistency check of the manuscript results against the released derived artifacts.
 - `outputs/`: generated verification reports.
 - `checksums/`: SHA-256 manifest for the package files.
 
@@ -34,7 +34,7 @@ Install dependencies:
 python -m pip install -r requirements.txt
 ```
 
-Run the verification:
+Run the consistency check:
 
 ```bash
 python scripts/verify_reported_results.py
@@ -60,14 +60,14 @@ python scripts/build_release_zip.py
 
 ## Verified Manuscript Results
 
-The verification script checks:
+The consistency-checking script checks:
 
 - fixed 139,258-record pilot set used for hash-mode and tampering experiments;
 - SHA-256 and HMAC-SHA-256 verification status;
-- relative HMAC overhead in audit-record generation and full record-set verification;
+- repeated SHA-256/HMAC-SHA-256 performance summaries over five executions, including audit-record generation, ledger construction, and full record-set verification;
 - eight controlled tampering scenarios and zero false acceptances;
 - Table 6 load-scalability metrics and near-linear total-pipeline timing;
-- Table 7 block-size sensitivity metrics, interpreted as block-header chain-validation timings;
+- Table 7 block-size sensitivity metrics, interpreted as block-header chain-validation timings and reported in MiB;
 - full-corpus storage metrics for 3,971,887 auditable units.
 
 ## Public Source Datasets
@@ -90,6 +90,7 @@ A later local numerical consistency audit was executed on Windows 11 with Python
 
 - No original conversational text is redistributed.
 - No HMAC secret key is included.
+- The implementation of the canonical dataset-normalization stage is not included because it forms part of the potentially commercializable software architecture. The package documents the source datasets, expected canonical outputs, downstream scripts, derived tables, and verification reports needed to evaluate the reported numerical results.
 - Derived aggregate tables are included for numerical verification.
 - Ledger and audit artifacts are represented through non-raw reports and metrics unless redistribution is compatible with source-dataset constraints.
 - Tamper-evidence claims require comparison with preserved artifacts, trusted checkpoints, or externally anchored commitments.

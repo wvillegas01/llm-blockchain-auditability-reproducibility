@@ -1,9 +1,5 @@
-Observed metric,SHA256,HMAC-SHA256,Relative change (%),Storage reduction vs off-chain (%),Verification success
-Off-chain repository size MB,11899.55153,11899.55153,0.0,0.0,1
-Hash-only audit-record size MB,55.786718,55.786718,0.0,99.5312,1
-Ledger block-header size MB,0.071671,0.071671,0.0,99.9994,1
-Ledger plus membership size MB,13.171151,13.230679,0.452,99.8888,1
-Audit generation throughput records/s,12019.443132,11373.627967,-5.3731,,1
-Verification throughput records/s,143092.066064,147761.857421,3.2635,,1
-Mean tamper detection time ms,643.753875,617.05,-4.1481,,1
-Tampering detection rate,1.0,1.0,0.0,,1
+Observed metric,SHA256 mean,SHA256 SD,HMAC-SHA256 mean,HMAC-SHA256 SD,Relative change in mean (%),Verification success
+Audit-record generation throughput records/s,6804.95151,273.318863,5842.610395,408.480244,-14.1418,1
+Operational ledger-stage throughput records/s,207897.976947,4626.532736,208719.40958,6949.49419,0.3951,1
+Full record-set verification throughput records/s,135589.698238,5101.073174,135606.532209,3147.027359,0.0124,1
+Successful verification runs,5,0,5,0,0.0,1

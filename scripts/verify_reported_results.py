@@ -53,6 +53,7 @@ def required_file(path: Path) -> None:
 def main() -> None:
     required_files = [
         TABLES / "hash_mode_comparison_raw.csv",
+        TABLES / "hash_performance_repeated_summary.csv",
         TABLES / "tampering_results_raw.csv",
         TABLES / "scalability_results_raw.csv",
         TABLES / "table6_load_scalability.csv",
@@ -78,18 +79,31 @@ def main() -> None:
     checks.append(check("HMAC tampering detection rate", float(hmac["tampering_detection_rate"]), 1.0, 1e-12))
     checks.append(check("SHA-256 tampering detection rate", float(sha["tampering_detection_rate"]), 1.0, 1e-12))
 
-    generation_change = (
-        (hmac["audit_interaction_throughput"] - sha["audit_interaction_throughput"])
-        / sha["audit_interaction_throughput"]
+    repeated = pd.read_csv(TABLES / "hash_performance_repeated_summary.csv")
+    repeated_sha = repeated.loc[repeated["hash_mode"] == "sha256"].iloc[0]
+    repeated_hmac = repeated.loc[repeated["hash_mode"] == "hmac-sha256"].iloc[0]
+    repeated_generation_change = (
+        (
+            repeated_hmac["audit_interaction_throughput_mean"]
+            - repeated_sha["audit_interaction_throughput_mean"]
+        )
+        / repeated_sha["audit_interaction_throughput_mean"]
         * 100
     )
-    verification_change = (
-        (hmac["verification_throughput"] - sha["verification_throughput"])
-        / sha["verification_throughput"]
+    repeated_verification_change = (
+        (
+            repeated_hmac["verification_throughput_mean"]
+            - repeated_sha["verification_throughput_mean"]
+        )
+        / repeated_sha["verification_throughput_mean"]
         * 100
     )
-    checks.append(check("HMAC audit-generation relative change percent", round(generation_change, 4), -5.3731, 0.0002))
-    checks.append(check("HMAC full record-set verification relative change percent", round(verification_change, 4), 3.2635, 0.0002))
+    checks.append(check("repeated hash-performance SHA-256 runs", int(repeated_sha["repetitions"]), 5))
+    checks.append(check("repeated hash-performance HMAC-SHA-256 runs", int(repeated_hmac["repetitions"]), 5))
+    checks.append(check("repeated SHA-256 verification successes", int(repeated_sha["verification_successes"]), 5))
+    checks.append(check("repeated HMAC-SHA-256 verification successes", int(repeated_hmac["verification_successes"]), 5))
+    checks.append(check("repeated HMAC audit-generation relative change percent", round(repeated_generation_change, 4), -14.1418, 0.0002))
+    checks.append(check("repeated HMAC full record-set verification relative change percent", round(repeated_verification_change, 4), 0.0124, 0.0002))
 
     tampering = pd.read_csv(TABLES / "tampering_results_raw.csv")
     checks.append(check("controlled tampering scenarios", len(tampering), 8))
@@ -137,12 +151,12 @@ def main() -> None:
 
     report = {
         "package": "github_zenodo_reproducibility_package_20260910",
-        "manuscript": "Large-Scale Conversational Data Auditability via Cryptographic Commitments and Blockchain Verification",
+        "manuscript": "Large-Scale Conversational Data Auditability via Cryptographic Commitments and Hash-Chained Audit-Ledger Verification",
         "all_checks_passed": all(item["passed"] for item in checks),
         "verification_scope": {
-            "immediate": "Validates reported numerical metrics from included derived tables, storage audit summaries, and traceability outputs.",
-            "full_pipeline": "Framework scripts are included, but full regeneration requires retrieving the public third-party datasets under their source licenses and preparing the documented local data paths.",
-            "not_redistributed": "Original third-party conversational records and HMAC secret keys are not included.",
+            "immediate": "Checks reported numerical metrics against included derived tables, storage audit summaries, and traceability outputs.",
+            "full_pipeline": "This is not an end-to-end recomputation from original third-party datasets. Full regeneration requires retrieving the public datasets under their source licenses and preparing the canonical intermediate files expected by the downstream scripts.",
+            "not_redistributed": "Original third-party conversational records, HMAC secret keys, and the Stage 08 canonical dataset-normalization implementation are not included.",
         },
         "table6_linear_fit": fit,
         "checks": checks,
@@ -157,9 +171,10 @@ def main() -> None:
         "",
         "## Scope",
         "",
-        "- Immediate verification validates the reported numerical metrics from included non-raw derived artifacts.",
-        "- Full pipeline regeneration requires downloading the public source datasets from their original providers.",
-        "- Original third-party conversational records and HMAC secret keys are not redistributed in this package.",
+        "- Immediate verification checks the reported numerical metrics against included non-raw derived artifacts.",
+        "- This report is a numerical consistency check, not an end-to-end recomputation from the original third-party datasets.",
+        "- Full pipeline regeneration requires downloading the public source datasets from their original providers and preparing canonical intermediate files expected by the downstream scripts.",
+        "- Original third-party conversational records, HMAC secret keys, and the Stage 08 canonical dataset-normalization implementation are not redistributed in this package.",
         "",
         "## Table 6 Linear Fit",
         "",

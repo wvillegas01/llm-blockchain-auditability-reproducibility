@@ -1,11 +1,11 @@
 {
   "package": "github_zenodo_reproducibility_package_20260910",
-  "manuscript": "Large-Scale Conversational Data Auditability via Cryptographic Commitments and Blockchain Verification",
+  "manuscript": "Large-Scale Conversational Data Auditability via Cryptographic Commitments and Hash-Chained Audit-Ledger Verification",
   "all_checks_passed": true,
   "verification_scope": {
-    "immediate": "Validates reported numerical metrics from included derived tables, storage audit summaries, and traceability outputs.",
-    "full_pipeline": "Framework scripts are included, but full regeneration requires retrieving the public third-party datasets under their source licenses and preparing the documented local data paths.",
-    "not_redistributed": "Original third-party conversational records and HMAC secret keys are not included."
+    "immediate": "Checks reported numerical metrics against included derived tables, storage audit summaries, and traceability outputs.",
+    "full_pipeline": "This is not an end-to-end recomputation from original third-party datasets. Full regeneration requires retrieving the public datasets under their source licenses and preparing the canonical intermediate files expected by the downstream scripts.",
+    "not_redistributed": "Original third-party conversational records, HMAC secret keys, and the Stage 08 canonical dataset-normalization implementation are not included."
   },
   "table6_linear_fit": {
     "slope_seconds_per_record": 8.392451688594886e-05,
@@ -78,16 +78,44 @@
       "passed": true
     },
     {
-      "check": "HMAC audit-generation relative change percent",
-      "actual": -5.3731,
-      "expected": -5.3731,
+      "check": "repeated hash-performance SHA-256 runs",
+      "actual": 5,
+      "expected": 5,
+      "tolerance": null,
+      "passed": true
+    },
+    {
+      "check": "repeated hash-performance HMAC-SHA-256 runs",
+      "actual": 5,
+      "expected": 5,
+      "tolerance": null,
+      "passed": true
+    },
+    {
+      "check": "repeated SHA-256 verification successes",
+      "actual": 5,
+      "expected": 5,
+      "tolerance": null,
+      "passed": true
+    },
+    {
+      "check": "repeated HMAC-SHA-256 verification successes",
+      "actual": 5,
+      "expected": 5,
+      "tolerance": null,
+      "passed": true
+    },
+    {
+      "check": "repeated HMAC audit-generation relative change percent",
+      "actual": -14.1418,
+      "expected": -14.1418,
       "tolerance": 0.0002,
       "passed": true
     },
     {
-      "check": "HMAC full record-set verification relative change percent",
-      "actual": 3.2635,
-      "expected": 3.2635,
+      "check": "repeated HMAC full record-set verification relative change percent",
+      "actual": 0.0124,
+      "expected": 0.0124,
       "tolerance": 0.0002,
       "passed": true
     },

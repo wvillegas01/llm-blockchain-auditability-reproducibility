@@ -4,9 +4,10 @@ All checks passed: `True`
 
 ## Scope
 
-- Immediate verification validates the reported numerical metrics from included non-raw derived artifacts.
-- Full pipeline regeneration requires downloading the public source datasets from their original providers.
-- Original third-party conversational records and HMAC secret keys are not redistributed in this package.
+- Immediate verification checks the reported numerical metrics against included non-raw derived artifacts.
+- This report is a numerical consistency check, not an end-to-end recomputation from the original third-party datasets.
+- Full pipeline regeneration requires downloading the public source datasets from their original providers and preparing canonical intermediate files expected by the downstream scripts.
+- Original third-party conversational records, HMAC secret keys, and the Stage 08 canonical dataset-normalization implementation are not redistributed in this package.
 
 ## Table 6 Linear Fit
 
@@ -25,8 +26,12 @@ All checks passed: `True`
 - `PASS` SHA-256 false acceptance count: actual=0 expected=0
 - `PASS` HMAC tampering detection rate: actual=1.0 expected=1.0
 - `PASS` SHA-256 tampering detection rate: actual=1.0 expected=1.0
-- `PASS` HMAC audit-generation relative change percent: actual=-5.3731 expected=-5.3731
-- `PASS` HMAC full record-set verification relative change percent: actual=3.2635 expected=3.2635
+- `PASS` repeated hash-performance SHA-256 runs: actual=5 expected=5
+- `PASS` repeated hash-performance HMAC-SHA-256 runs: actual=5 expected=5
+- `PASS` repeated SHA-256 verification successes: actual=5 expected=5
+- `PASS` repeated HMAC-SHA-256 verification successes: actual=5 expected=5
+- `PASS` repeated HMAC audit-generation relative change percent: actual=-14.1418 expected=-14.1418
+- `PASS` repeated HMAC full record-set verification relative change percent: actual=0.0124 expected=0.0124
 - `PASS` controlled tampering scenarios: actual=8 expected=8
 - `PASS` controlled tampering scenarios detected: actual=8 expected=8
 - `PASS` controlled tampering false acceptances: actual=0 expected=0
