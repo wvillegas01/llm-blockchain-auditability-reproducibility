@@ -84,7 +84,7 @@ Original third-party conversational records are not included in this repository.
 
 The primary experiments reported in the manuscript were executed on an Intel Core i9 workstation with 64 GB RAM, Ubuntu 24.04 LTS, and Python 3.12.
 
-A later local numerical consistency audit was executed on Windows 11 with Python 3.12.3 on a 13th Gen Intel(R) Core(TM) i9-13900HX workstation with 24 physical cores, 32 logical cores, and approximately 31.75 GB RAM. This local audit checked the reported tables against processed project artifacts and does not replace the original experimental environment.
+A later local numerical consistency audit was executed on Windows 11 with Python 3.12.3 on a 13th Gen Intel(R) Core(TM) i9-13900HX workstation with 24 physical cores, 32 logical cores, and approximately 31.75 GB RAM. The five-run repeated performance experiments reported for Tables 3, 6, and 7 were executed in this Windows 11 environment. The Ubuntu environment corresponds to the original experimental execution, whereas the repeated-run results replace the previous single-run performance values in the reported performance tables.
 
 ## Data and Security Boundaries
 
