@@ -8,10 +8,10 @@
     "not_redistributed": "Original third-party conversational records, HMAC secret keys, and the Stage 08 canonical dataset-normalization implementation are not included."
   },
   "table6_linear_fit": {
-    "slope_seconds_per_record": 8.392451688594886e-05,
-    "intercept_seconds": 1.0514580428728202,
-    "r_squared": 0.9999891480284726,
-    "seconds_per_100k_records": 8.392451688594885
+    "slope_seconds_per_record": 0.00017961143468698268,
+    "intercept_seconds": -1.7756864439724132,
+    "r_squared": 0.9999603099790827,
+    "seconds_per_100k_records": 17.961143468698268
   },
   "checks": [
     {
@@ -141,6 +141,13 @@
       "passed": true
     },
     {
+      "check": "Table 6 repeated load-run count",
+      "actual": 25,
+      "expected": 25,
+      "tolerance": null,
+      "passed": true
+    },
+    {
       "check": "Table 6 load scenario count",
       "actual": 5,
       "expected": 5,
@@ -162,30 +169,51 @@
       "passed": true
     },
     {
-      "check": "Table 6 linear fit R squared",
-      "actual": 0.999989,
-      "expected": 0.999989,
+      "check": "Table 6 repeated successful verification runs",
+      "actual": 25,
+      "expected": 25,
+      "tolerance": null,
+      "passed": true
+    },
+    {
+      "check": "Table 6 linear fit R squared from repeated means",
+      "actual": 0.99996,
+      "expected": 0.99996,
       "tolerance": 1e-06,
       "passed": true
     },
     {
-      "check": "Table 6 seconds per 100k records",
-      "actual": 8.392,
-      "expected": 8.392,
+      "check": "Table 6 seconds per 100k records from repeated means",
+      "actual": 17.961,
+      "expected": 17.961,
       "tolerance": 0.002,
       "passed": true
     },
     {
-      "check": "Table 6 final relative latency",
-      "actual": 8.9185,
-      "expected": 8.9185,
+      "check": "Table 8 final relative latency from repeated means",
+      "actual": 12.8616,
+      "expected": 12.8616,
       "tolerance": 0.0001,
+      "passed": true
+    },
+    {
+      "check": "Table 7 repeated block-size run count",
+      "actual": 30,
+      "expected": 30,
+      "tolerance": null,
       "passed": true
     },
     {
       "check": "Table 7 block-size scenario count",
       "actual": 6,
       "expected": 6,
+      "tolerance": null,
+      "passed": true
+    },
+    {
+      "check": "Table 7 repeated successful validation runs",
+      "actual": 30,
+      "expected": 30,
       "tolerance": null,
       "passed": true
     },
@@ -197,17 +225,17 @@
       "passed": true
     },
     {
-      "check": "Table 7 minimum block-header chain-validation time",
-      "actual": 2.6e-05,
-      "expected": 2.6e-05,
-      "tolerance": 1e-12,
+      "check": "Table 7 minimum mean block-header chain-validation time",
+      "actual": 0.00087286,
+      "expected": 0.00087286,
+      "tolerance": 1e-08,
       "passed": true
     },
     {
-      "check": "Table 7 maximum block-header chain-validation time",
-      "actual": 0.000921,
-      "expected": 0.000921,
-      "tolerance": 1e-12,
+      "check": "Table 7 maximum mean block-header chain-validation time",
+      "actual": 0.04202904,
+      "expected": 0.04202904,
+      "tolerance": 1e-08,
       "passed": true
     },
     {

@@ -4,7 +4,7 @@ This package is intended to address the editorial request that the reported nume
 
 ## What Can Be Verified Immediately
 
-Running `python scripts/verify_reported_results.py` checks the manuscript's reported numerical results against the included non-raw derived artifacts. This includes hash-mode metrics, tampering detection, Table 6 load scalability, Table 7 block-size sensitivity, and full-corpus storage metrics. The script is a numerical consistency check of the released artifacts rather than an end-to-end recomputation from the original third-party datasets.
+Running `python scripts/verify_reported_results.py` checks the manuscript's reported numerical results against the included non-raw derived artifacts. This includes hash-mode metrics, tampering detection, Table 6 load scalability over five executions per load configuration, Table 7 block-size sensitivity over five executions per block-size configuration, and full-corpus storage metrics. The script is a numerical consistency check of the released artifacts rather than an end-to-end recomputation from the original third-party datasets.
 
 ## What Requires Dataset Retrieval
 

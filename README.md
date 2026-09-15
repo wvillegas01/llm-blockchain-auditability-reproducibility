@@ -19,7 +19,7 @@ The package does not redistribute original third-party conversational records, H
 
 - `configs/`: experimental configuration and environment metadata.
 - `data_access/`: public dataset links and redistribution notes.
-- `derived_tables/`: non-raw tables and aggregate outputs used to verify manuscript results.
+- `derived_tables/`: non-raw tables, repeated-run summaries, and aggregate outputs used to verify manuscript results.
 - `framework_scripts/`: traceability scripts for audit-record generation, ledger construction, verification, tampering, and performance stages downstream of canonical normalization.
 - `reports/`: audit reports supporting the storage-footprint and traceability claims.
 - `scripts/verify_reported_results.py`: automated numerical consistency check of the manuscript results against the released derived artifacts.
@@ -66,8 +66,8 @@ The consistency-checking script checks:
 - SHA-256 and HMAC-SHA-256 verification status;
 - repeated SHA-256/HMAC-SHA-256 performance summaries over five executions, including audit-record generation, ledger construction, and full record-set verification;
 - eight controlled tampering scenarios and zero false acceptances;
-- Table 6 load-scalability metrics and near-linear total-pipeline timing;
-- Table 7 block-size sensitivity metrics, interpreted as block-header chain-validation timings and reported in MiB;
+- Table 6 load-scalability metrics over five executions per load configuration and near-linear total-pipeline timing fitted from repeated-run means;
+- Table 7 block-size sensitivity metrics over five executions per block-size configuration, interpreted as block-header chain-validation timings and reported in MiB;
 - full-corpus storage metrics for 3,971,887 auditable units.
 
 ## Public Source Datasets
